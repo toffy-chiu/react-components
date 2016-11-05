@@ -1,0 +1,20 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "react demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "keywords": [
+    "react",
+    "demo"
+  ],
+  "author": "toffy",
+  "license": "ISC",
+  "devDependencies": {
+    "react-hot-loader": "^3.0.0-beta.5",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
