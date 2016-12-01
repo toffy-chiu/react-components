@@ -1,0 +1,48 @@
+.datePicker{
+    position: absolute;
+    z-index: 10060;
+    display: none;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+    font-size: 13px;
+}
+.datePicker td, .datePicker th{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: none;
+    padding: 2px 5px;
+}
+.datePicker th.header-switch {
+    width: 145px;
+}
+.datePicker table tr td span {
+    width: 23%;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 1%;
+    cursor: pointer;
+}
+.datePicker .datePicker-hours span,.datePicker .datePicker-minutes span {
+    height: 26px;
+    line-height: 26px;
+}
+.datePicker td.day:hover,.datePicker thead tr:first-child th:hover,.datePicker tfoot tr th:hover,.datePicker table tr td span:hover,.datePicker td.week:hover {
+    background: #eeeeee;
+    cursor: pointer;
+}
+.datePicker table tr td.old, .datePicker table tr td.new{
+    color: #999;
+}
+.datePicker table .active{
+    background-color: #4b8df8 !important;
+    color: white;
+}

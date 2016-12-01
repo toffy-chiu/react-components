@@ -1,10 +1,12 @@
 {
   "name": "tf-react-cpn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react component",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p",
+    "clean": "rimraf lib",
+    "build": "babel src --out-dir lib --extensions .js --copy-files",
+    "prepublish": "npm run clean && npm run build",
     "test": "node ./server.js"
   },
   "keywords": [
@@ -14,13 +16,18 @@
   "author": "toffy",
   "license": "ISC",
   "dependencies": {
+    "tf-utils": "^1.1.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "css-loader": "^0.25.0",
     "html-webpack-plugin": "^2.24.1",
+    "jsx-loader": "^0.13.2",
     "react-hot-loader": "^3.0.0-beta.5",
+    "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
