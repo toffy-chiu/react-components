@@ -1,0 +1,9 @@
+.travis.yml
+.gitignore
+.npmignore
+.babelrc
+/webpack.*.js
+/.idea
+/node_modules/
+/src
+/examples

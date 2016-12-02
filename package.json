@@ -1,13 +1,13 @@
 {
   "name": "tf-react-cpn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "react component",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf lib",
     "build": "babel src --out-dir lib --extensions .js --copy-files",
     "prepublish": "npm run clean && npm run build",
-    "test": "node ./server.js"
+    "test": "node ./examples/server.js"
   },
   "keywords": [
     "react",
