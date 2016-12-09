@@ -11,7 +11,7 @@ var DateInputPage = React.createClass({
     },
     render: function() {
         return (
-            <div>
+            <div style={{height:800}}>
                 <h1>{this.state.value}</h1>
                 <DateInput value={this.state.value} onChange={this.handleChange}/>
             </div>

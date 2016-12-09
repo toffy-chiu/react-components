@@ -8,9 +8,12 @@ var Index = React.createClass({
                     <li>
                         <Link to="/DateInput">DateInput</Link>
                     </li>
+                    <li>
+                        <Link to="/SearchSelect">SearchSelect</Link>
+                    </li>
                 </ul>
             </div>
-        );
+        )
     }
 });
 

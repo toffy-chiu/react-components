@@ -46,7 +46,7 @@ module.exports = {
         new ExtractTextPlugin(isProd ? '[name].[chunkhash:8].css' : devSrc+'[name].css'),
         new HtmlWebpackPlugin({
             title:'React常用组件示例',
-            template:'./examples/index.html',
+            template:'./examples/index.html'
             //filename:'./examples/index.html' //结合output.path
         }),
         new webpack.ProvidePlugin({

@@ -1,6 +1,6 @@
 {
   "name": "tf-react-cpn",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react component",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "author": "toffy",
   "license": "ISC",
   "dependencies": {
-    "tf-utils": "^1.1.0",
+    "tf-utils": "^1.2.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },

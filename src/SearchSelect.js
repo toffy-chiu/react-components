@@ -1,5 +1,6 @@
 var React=require('react');
 var domUtils=require('./utils/domUtils');
+var is=require('tf-utils/lib/is');
 require('./css/SearchSelect.css');
 
 var SearchSelect=React.createClass({
@@ -23,6 +24,12 @@ var SearchSelect=React.createClass({
         }
     },
     getInitialState:function(){
+        if(this.props.multiple&&!is.array(this.props.value)){
+            throw new Error('多选value类型必须为array');
+        }
+        if(!this.props.multiple&&is.array(this.props.value)){
+            throw new Error('单选value类型不能为array');
+        }
         return {
             active:false,
             showDrop:false,

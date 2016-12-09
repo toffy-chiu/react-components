@@ -11,6 +11,7 @@ var Index=require('./components/index');
 
 //各模块页面
 var DateInput=function(location, cb){require.ensure([], function(require){cb(null, require('./components/DateInput'));});};
+var SearchSelect=function(location, cb){require.ensure([], function(require){cb(null, require('./components/SearchSelect'));});};
 
 module.exports = React.createClass({
     render: function() {
@@ -18,8 +19,9 @@ module.exports = React.createClass({
             <Router history={history}>
                 <Route path="/">
                     <IndexRedirect to="/index"/>
-                    <Route path="/index" getComponent={Index}/>
+                    <Route path="index" component={Index}/>
                     <Route path="DateInput" getComponent={DateInput}/>
+                    <Route path="SearchSelect" getComponent={SearchSelect}/>
                 </Route>
             </Router>
         );
