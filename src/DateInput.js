@@ -1,6 +1,5 @@
 var React=require('react');
 var ReactDOM=require('react-dom');
-var objectAssign=require('tf-utils/lib/objectAssign');
 var offset=require('tf-utils/dom/offset');
 var hasClass=require('tf-utils/dom/hasClass');
 
@@ -34,14 +33,14 @@ var DateInput=React.createClass({
         ];
     },
     propTypes:{
+        name:React.PropTypes.string, //普通name属性
         value:React.PropTypes.string,
         onChange:React.PropTypes.func,
         type:React.PropTypes.oneOf(['year', 'month', 'week', 'date', 'datetime'])
     },
     getDefaultProps:function(){
         return {
-            type:'date',
-            options:{}
+            type:'date'
         }
     },
     componentDidMount:function(){
@@ -371,11 +370,8 @@ var DateInput=React.createClass({
         this.hide();
     },
     render:function(){
-        var props=objectAssign({}, this.props);
-        delete props.type;
-        delete props.options;
         return (
-            <input ref="ele" {...props} value={props.value} type="text" onClick={this.show} style={{cursor:'pointer'}} readOnly/>
+            <input ref="ele" name={this.props.name} value={this.props.value} type="text" onClick={this.show} style={{cursor:'pointer'}} readOnly/>
         )
     }
 });

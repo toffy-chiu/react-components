@@ -6,6 +6,10 @@
 
 ## 日志更新
 
+### v1.0.4
+- 修复DateInput默认值为空串时会显示undefined的问题。
+- 调整SearchSelect部分样式问题。
+
 ### v1.0.3
 - 增加SearchSelect的value类型验证。
 - 修改Modal的title属性类型为node，即允许多类型。

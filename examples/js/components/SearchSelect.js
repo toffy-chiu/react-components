@@ -21,7 +21,7 @@ var SearchSelectPage = React.createClass({
     },
     render: function() {
         return (
-            <div>
+            <div style={{width:'20%',margin:'50px auto'}}>
                 <h1>{this.state.value}</h1>
                 <SearchSelect multiple value={this.state.value} onChange={this.handleChange} list={this.state.list}/>
             </div>

@@ -3,7 +3,7 @@ var DateInput=require('../../../src/DateInput');
 var DateInputPage = React.createClass({
     getInitialState:function(){
         return {
-            value:'2016-12-02'
+            value:''
         }
     },
     handleChange:function(e){
