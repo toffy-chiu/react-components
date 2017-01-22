@@ -5,6 +5,8 @@ require('./css/SearchSelect.css');
 
 var SearchSelect=React.createClass({
     propTypes:{
+        className:React.PropTypes.string,
+        style:React.PropTypes.object,
         name:React.PropTypes.string, //普通name属性
         maxItemLength:React.PropTypes.number, //最多显示的匹配条数
         idField:React.PropTypes.string,
@@ -205,8 +207,18 @@ var SearchSelect=React.createClass({
             });
         }
 
+        //class name
+        var className=['ss-container'];
+        className.push(this.props.multiple?'ss-multiple':'ss-single');
+        if(this.state.active){
+            className.push('ss-active');
+        }
+        if(this.props.className){
+            className.push(this.props.className);
+        }
+
         return (
-            <div ref="container" className={'ss-container ss-'+(this.props.multiple?'multiple':'single')+(this.state.active?' ss-active':'')} onClick={this.focus}>
+            <div ref="container" className={className.join(' ')} style={this.props.style} onClick={this.focus}>
                 {/*<select style={{display:'none'}}>{this.props.children}</select>*/}
                 {
                     this.props.multiple?(

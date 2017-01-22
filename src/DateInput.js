@@ -33,10 +33,14 @@ var DateInput=React.createClass({
         ];
     },
     propTypes:{
+        className:React.PropTypes.string,
+        style:React.PropTypes.object,
+        disabled:React.PropTypes.bool,
         name:React.PropTypes.string, //普通name属性
         value:React.PropTypes.string,
         onChange:React.PropTypes.func,
-        type:React.PropTypes.oneOf(['year', 'month', 'week', 'date', 'datetime'])
+        type:React.PropTypes.oneOf(['year', 'month', 'week', 'date', 'datetime']),
+        fixed:React.PropTypes.bool
     },
     getDefaultProps:function(){
         return {
@@ -49,6 +53,12 @@ var DateInput=React.createClass({
         //添加主面板到body
         this.picker=document.createElement('div');
         this.picker.className='datePicker';
+
+        //定位方式
+        if(this.props.fixed){
+            this.picker.style.position='fixed';
+        }
+
         document.body.appendChild(this.picker);
         this.element=this.refs.ele;
     },
@@ -370,8 +380,21 @@ var DateInput=React.createClass({
         this.hide();
     },
     render:function(){
+        var props=this.props;
+        var style=props.style||{};
+        style.cursor=props.disabled?'not-allowed':'pointer';
         return (
-            <input ref="ele" name={this.props.name} value={this.props.value} type="text" onClick={this.show} style={{cursor:'pointer'}} readOnly/>
+            <input
+                ref="ele"
+                name={props.name}
+                value={props.value}
+                type="text"
+                onClick={props.disabled?null:this.show}
+                className={props.className}
+                style={style}
+                readOnly
+                disabled={props.disabled}
+            />
         )
     }
 });
